@@ -9,6 +9,8 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import javax.transaction.Transactional;
+
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +34,8 @@ public class RecipeServiceImpl implements RecipeService {
 
 	
 
-
-	@Override
+	
+	@Override	
 	public RecipeData addRecipe(RecipeData recipeData) {
 		RecipeEntity recipeEntity = modelMapper.map(recipeData, RecipeEntity.class);
 		recipeEntity=recipeSpecificationRepository.save(recipeEntity);
@@ -43,6 +45,7 @@ public class RecipeServiceImpl implements RecipeService {
 	}
 
 	@Override
+	@Transactional
 	public RecipeData modifyRecipe(RecipeData recipeData) {
 		RecipeEntity recipeEntity = recipeSpecificationRepository.findById(recipeData.getId())
 				.orElseThrow(() -> new RecordNotFoundException("Recipe Id '" + recipeData.getId() + "' not Exists"));	
@@ -53,6 +56,7 @@ public class RecipeServiceImpl implements RecipeService {
 	}
 
 	@Override
+	@Transactional
 	public Map<String,Boolean> removeRecipe(Integer recipeId) {
 		
 		RecipeEntity recipeEntity = recipeSpecificationRepository.findById(recipeId)
@@ -66,6 +70,7 @@ public class RecipeServiceImpl implements RecipeService {
 	}
 
 	@Override
+	@Transactional
 	public RecipeData getRecipe(Integer recipeId) {
 		RecipeEntity recipeEntity = recipeSpecificationRepository.findById(recipeId)
 				.orElseThrow(() -> new RecordNotFoundException("Recipe Id '" + recipeId + "' not Exists"));
@@ -76,6 +81,7 @@ public class RecipeServiceImpl implements RecipeService {
 	
 
 	@Override
+	@Transactional
 	public List<RecipeData> findRecipes(String searchRequest) {
 		RecipeSearchPredicateBuilder builder = new RecipeSearchPredicateBuilder();
 	        if (searchRequest != null) {
