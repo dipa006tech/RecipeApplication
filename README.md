@@ -42,7 +42,7 @@ http://localhost:8080/recipeapp
     "instructions": "Preparation in Oven"
 }
 ```
-** Details**  
+**Details**  
 
 Add Recipe  
 ![image](https://user-images.githubusercontent.com/113394813/189933012-9c213258-ed4c-42cd-9ab5-e66cf753c8fd.png)
