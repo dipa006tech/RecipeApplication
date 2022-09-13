@@ -8,7 +8,7 @@
 
 
 **Prerequisites**
-    JDK 1.8
+    JDK 11
     Maven 3 or later (3.5)
     GIT
 
