@@ -30,58 +30,55 @@ public class RecipeControllerTests {
 	private RecipeController recipeController;
 
 	@Test
-    @DisplayName("Add Recipe")
+	@DisplayName("Add Recipe")
 	@MockitoSettings(strictness = Strictness.WARN)
-    void addRecipeTest() {
+	void addRecipeTest() {
 
-	       ResponseEntity<RecipeData> responseEntity = recipeController.addRecipe(prepareRecipeforTest().get(0));
-	         
-	        assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);	
-        
-    }
-	
-	
+		ResponseEntity<RecipeData> responseEntity = recipeController.addRecipe(prepareRecipeforTest().get(0));
+
+		assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
+
+	}
+
 	private List<RecipeData> prepareRecipeforTest() {
-        List<RecipeData> recipeDataList = new ArrayList<>();
-        RecipeData recipeData = new RecipeData();
-        recipeData.setId(4);
-        recipeData.setRecipeName("Pancake");
-        recipeData.setNoOfServings(6);
-        recipeData.setIngredients("Flour, Honey, yeast");
-        recipeData.setIsVegetarian("Y");
-        recipeData.setInstructions("Prepared in Stove");
-        recipeDataList.add(recipeData);      
+		List<RecipeData> recipeDataList = new ArrayList<>();
+		RecipeData recipeData = new RecipeData();
+		recipeData.setId(4);
+		recipeData.setRecipeName("Pancake");
+		recipeData.setNoOfServings(6);
+		recipeData.setIngredients("Flour, Honey, yeast");
+		recipeData.setIsVegetarian("Y");
+		recipeData.setInstructions("Prepared in Stove");
+		recipeDataList.add(recipeData);
 
-        return recipeDataList;
-    }
-	
-	
+		return recipeDataList;
+	}
+
 	@Test
-    @DisplayName("Update Recipe")
+	@DisplayName("Update Recipe")
 	@MockitoSettings(strictness = Strictness.WARN)
-    void updateRecipeTest() {
-	       ResponseEntity<RecipeData> responseEntity = recipeController.modifyRecipe(prepareRecipeforTest().get(0),6);	         
-	        assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);	
-        
-    }
-	
+	void updateRecipeTest() {
+		ResponseEntity<RecipeData> responseEntity = recipeController.modifyRecipe(prepareRecipeforTest().get(0), 6);
+		assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
+
+	}
+
 	@Test
-    @DisplayName("Update Recipe")
+	@DisplayName("Update Recipe")
 	@MockitoSettings(strictness = Strictness.WARN)
-    void deleteRecipeTest() {
-	       ResponseEntity<Map<String, Boolean>> responseEntity = recipeController.removeRecipe(6);	         
-	        assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);	
-        
-    }
-	
-	
+	void deleteRecipeTest() {
+		ResponseEntity<Map<String, Boolean>> responseEntity = recipeController.removeRecipe(6);
+		assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
+
+	}
+
 	@Test
-    @DisplayName("Update Recipe")
+	@DisplayName("Update Recipe")
 	@MockitoSettings(strictness = Strictness.WARN)
-    void displayRecipesTest() {
-	       ResponseEntity<List<RecipeData>> responseEntity = recipeController.findRecipes("PanCake");	         
-	        assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);	
-        
-    }
+	void displayRecipesTest() {
+		ResponseEntity<List<RecipeData>> responseEntity = recipeController.findRecipes("PanCake");
+		assertThat(responseEntity.getStatusCodeValue()).isEqualTo(200);
+
+	}
 
 }

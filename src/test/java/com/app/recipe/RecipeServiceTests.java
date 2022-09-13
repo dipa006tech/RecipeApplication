@@ -23,7 +23,7 @@ import com.app.recipe.service.RecipeService;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class RecipeServiceTests {
-	
+
 	@Autowired
 	private RecipeService recipeService;
 
@@ -31,47 +31,38 @@ public class RecipeServiceTests {
 	private RecipeRepository recipeRepository;
 
 	@Test
-    @DisplayName("Add Recipe")
-    public void addRecipeTest() {      
-	        
-	        when(recipeRepository.save(getCakeRecipeEntity())).thenReturn(getCakeRecipeEntity());
-	        assertEquals(getCakeRecipeDataEntity(), recipeService.addRecipe(getCakeRecipeDataEntity()));
+	@DisplayName("Add Recipe")
+	public void addRecipeTest() {
 
-    }
+		when(recipeRepository.save(getCakeRecipeEntity())).thenReturn(getCakeRecipeEntity());
+		assertEquals(getCakeRecipeDataEntity(), recipeService.addRecipe(getCakeRecipeDataEntity()));
 
-	
-	
+	}
+
 	private RecipeData getCakeRecipeDataEntity() {
 		RecipeData recipeEntity = new RecipeData();
-       
-        recipeEntity.setId(6);
-        recipeEntity.setRecipeName("Cake");
-        recipeEntity.setNoOfServings(6);
-        recipeEntity.setIngredients("Flour, Honey, yeast");
-        recipeEntity.setIsVegetarian("Y");
-        recipeEntity.setInstructions("Prepared in Stove");      
-        
-        
-        return recipeEntity;
-    }
-	
+
+		recipeEntity.setId(6);
+		recipeEntity.setRecipeName("Cake");
+		recipeEntity.setNoOfServings(6);
+		recipeEntity.setIngredients("Flour, Honey, yeast");
+		recipeEntity.setIsVegetarian("Y");
+		recipeEntity.setInstructions("Prepared in Stove");
+
+		return recipeEntity;
+	}
+
 	private RecipeEntity getCakeRecipeEntity() {
 		RecipeEntity recipeEntity = new RecipeEntity();
-       
-        recipeEntity.setId(6);
-        recipeEntity.setRecipeName("Cake");
-        recipeEntity.setNoOfServings(6);
-        recipeEntity.setIngredients("Flour, Honey, yeast");
-        recipeEntity.setIsVegetarian("Y");
-        recipeEntity.setInstructions("Prepared in Stove");       
-        
-        
-        return recipeEntity;
-    }	
-	
-	
-	
-	
-	
+
+		recipeEntity.setId(6);
+		recipeEntity.setRecipeName("Cake");
+		recipeEntity.setNoOfServings(6);
+		recipeEntity.setIngredients("Flour, Honey, yeast");
+		recipeEntity.setIsVegetarian("Y");
+		recipeEntity.setInstructions("Prepared in Stove");
+
+		return recipeEntity;
+	}
 
 }
