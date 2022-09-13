@@ -8,9 +8,9 @@
 
 
 **Prerequisites**
-    JDK 11
-    Maven 3.8.6 or higher
-    GIT
+    JDK 11  
+    Maven 3.8.6 or higher  
+    GIT  
 
 **Technology stack:**
    Technology stack used : Springboot, MysqlDB, Spring JPA, QueryDsl, Mysql DB
