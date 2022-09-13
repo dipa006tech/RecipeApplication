@@ -7,7 +7,7 @@
 ![image](https://user-images.githubusercontent.com/113394813/189920614-2a5ed3f8-cd7e-4bfd-96bf-1925638c9780.png)
 
 
-**Prerequisites**
+**Prerequisites**  
     JDK 11  
     Maven 3.8.6 or higher  
     GIT  
