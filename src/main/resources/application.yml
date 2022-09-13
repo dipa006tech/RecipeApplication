@@ -2,6 +2,9 @@ server:
   servlet:
     context-path: /recipeapp
 spring:
+  mvc:
+      pathmatch:
+            matching-strategy: ant_path_matcher
   application:
     name: SpringBootAssessmentRecipe
   datasource:
@@ -15,4 +18,8 @@ spring:
       ddl-auto: update
     generate-ddl: true
     show-sql: true
+ 
+ 
+    
+    
 

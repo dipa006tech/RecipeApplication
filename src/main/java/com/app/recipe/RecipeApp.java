@@ -8,6 +8,7 @@ public class RecipeApp {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RecipeApp.class, args);
-	}
+	}	
+	
 
 }
