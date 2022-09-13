@@ -9,7 +9,7 @@
 
 **Prerequisites**
     JDK 11
-    Maven 3 or later (3.5)
+    Maven 3.8.6 or higher
     GIT
 
 **Technology stack:**
