@@ -42,4 +42,29 @@ http://localhost:8080/recipeapp
     "instructions": "Preparation in Oven"
 }
 ```
+** Details**  
+
+Add Recipe  
+![image](https://user-images.githubusercontent.com/113394813/189933012-9c213258-ed4c-42cd-9ab5-e66cf753c8fd.png)
+
+Update Recipe  
+![image](https://user-images.githubusercontent.com/113394813/189933196-6e97d76b-90f0-4b0d-84ac-623b871a4484.png)
+
+Delete Recipe  
+![image](https://user-images.githubusercontent.com/113394813/189933298-e7b9880d-474f-4719-a549-1804480d6d4b.png)
+
+Get Recipe  
+![image](https://user-images.githubusercontent.com/113394813/189933524-aaa24318-098d-4c2a-a20e-883b3cdfeb6d.png)
+
+Find Recipe  
+![image](https://user-images.githubusercontent.com/113394813/189933700-e5dfd0ca-037b-4f7f-a141-f0a59dc7cc5a.png)  
+
+**Postman Collection**
+https://www.getpostman.com/collections/03df4836099269d4de18
+
+
+
+
+
+
 
