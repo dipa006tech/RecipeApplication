@@ -28,7 +28,8 @@ http://localhost:8080/recipeapp
 
 **Endpoints**
 
-![image](https://user-images.githubusercontent.com/113394813/189931396-4a707542-4609-47fb-8689-b6a6b054aefa.png)
+![image](https://user-images.githubusercontent.com/113394813/189932446-ca7df273-bfac-46d4-988a-53f152d052cb.png)
+
 
 
 **Sample Request Data:**
