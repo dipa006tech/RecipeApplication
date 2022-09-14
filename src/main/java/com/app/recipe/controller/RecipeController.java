@@ -97,8 +97,7 @@ public class RecipeController {
 	@DeleteMapping(value = "/{recipeId}")
 	@ApiOperation(value = "Delete Recipe", notes = "This service will Remove an Recipe for user")
 	@ResponseStatus(HttpStatus.OK)
-	public ResponseEntity<Map<String, Boolean>>  removeRecipe(@Valid @PathVariable Integer recipeId) {
-		
+	public ResponseEntity<Map<String, Boolean>>  removeRecipe(@Valid @PathVariable Integer recipeId) {		
 		
 		Map<String,Boolean> responseMap= recipeService.removeRecipe(recipeId);
 		

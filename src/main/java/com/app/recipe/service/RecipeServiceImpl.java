@@ -84,29 +84,32 @@ public class RecipeServiceImpl implements RecipeService {
 	@Override
 	@Transactional
 	public List<RecipeData> findRecipes(String searchRequest) {
-		List<RecipeData> postDtoList=null;
-		if(StringUtils.isNullOrEmpty(searchRequest)) {
-			List<RecipeEntity> recipeEntityList=recipeSpecificationRepository.findAll();
-			Type listType = new TypeToken<List<RecipeData>>(){}.getType();
-			postDtoList = modelMapper.map(recipeEntityList,listType);	 
+		List<RecipeData> postDtoList = null;
+		if (StringUtils.isNullOrEmpty(searchRequest)) {
+			List<RecipeEntity> recipeEntityList = recipeSpecificationRepository.findAll();
+			Type listType = new TypeToken<List<RecipeData>>() {
+			}.getType();
+			postDtoList = modelMapper.map(recipeEntityList, listType);
 			return postDtoList;
-		}else {
-		RecipeSearchPredicateBuilder builder = new RecipeSearchPredicateBuilder();
-	        if (searchRequest != null) {
-	            Pattern pattern = Pattern.compile("(\\w+?)(:|<|>)(\\w+?),");
-	            Matcher matcher = pattern.matcher(searchRequest + ",");
-	            while (matcher.find()) {
-	                builder.with(matcher.group(1), matcher.group(2), matcher.group(3));
-	            }
-	        }
-	        BooleanExpression exp = builder.build();
-	        Iterable<RecipeEntity> recipeEntity= recipeSpecificationRepository.findAll(exp);			
-			List<RecipeEntity> recipeEntityList=StreamSupport.stream(recipeEntity.spliterator(), false).collect(Collectors.toList());
-			Type listType = new TypeToken<List<RecipeData>>(){}.getType();
-			postDtoList = modelMapper.map(recipeEntityList,listType);	        
-	        return postDtoList;
+		} else {
+			RecipeSearchPredicateBuilder builder = new RecipeSearchPredicateBuilder();
+			if (searchRequest != null) {
+				Pattern pattern = Pattern.compile("(\\w+?)(:|<|>)(\\w+?),");
+				Matcher matcher = pattern.matcher(searchRequest + ",");
+				while (matcher.find()) {
+					builder.with(matcher.group(1), matcher.group(2), matcher.group(3));
+				}
+			}
+			BooleanExpression exp = builder.build();
+			Iterable<RecipeEntity> recipeEntity = recipeSpecificationRepository.findAll(exp);
+			List<RecipeEntity> recipeEntityList = StreamSupport.stream(recipeEntity.spliterator(), false)
+					.collect(Collectors.toList());
+			Type listType = new TypeToken<List<RecipeData>>() {
+			}.getType();
+			postDtoList = modelMapper.map(recipeEntityList, listType);
+			return postDtoList;
 		}
-		
+
 	}
 
 	
