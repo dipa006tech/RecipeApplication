@@ -117,7 +117,7 @@ public class RecipeController {
 	@ApiOperation(value = "Find Recipe", notes = "This service will Gets recipes based on your search")
 	@ResponseStatus(HttpStatus.OK)
 	@GetMapping(value = "/findRecipes")
-	public ResponseEntity<List<RecipeData>> findRecipes(@RequestParam(value = "search") String searchRequest) {
+	public ResponseEntity<List<RecipeData>> findRecipes(@RequestParam(value = "search", required = false) String searchRequest) {
 
 		List<RecipeData> recipies = recipeService.findRecipes(searchRequest);
 
